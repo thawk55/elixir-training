@@ -7,7 +7,7 @@ The `=` sign is known as the match symbol. It will try to make the two sides mat
 It can be used to assign variables as follows:
 
 1. Declaring a variable. This looks much the same as any other language.
-  * `test = "hello"` will set test to be equal to `"hello"`
+  * `test = "hello"` will set `test` to be equal to `"hello"`
 
 2. Pulling apart a complex type like a tuple, list, or map. Since the `=` sign matches, it will allow you to handle complex results. If you have a tuple like `{true, 123456}`, there are a couple ways you could set variables for it.
   *  `tuple = {true, 123456}` will set the variable `tuple` to be `{true, 123456}`
