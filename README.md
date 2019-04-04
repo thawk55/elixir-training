@@ -1,21 +1,10 @@
 # ElixirTraining
 
-**TODO: Add description**
+Checkout the branches in order by number.
 
-## Installation
+## Install Elixir
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `elixir_training` to your list of dependencies in `mix.exs`:
+See https://elixir-lang.org/install.html for more details
 
-```elixir
-def deps do
-  [
-    {:elixir_training, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/elixir_training](https://hexdocs.pm/elixir_training).
+On a Mac, install via [homebrew](https://brew.sh/) with `brew install elixir`
 
