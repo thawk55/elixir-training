@@ -4,6 +4,8 @@ defmodule Types do
 
   Each function should return type mentioned
   """
+
+  # Defines the struct Types with a key of hello with default value of 1
   defstruct hello: 1
 
   def atom() do
