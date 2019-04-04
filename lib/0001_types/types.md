@@ -41,7 +41,7 @@ The types are as follows:
 
 7. Tuple - a tuple is a grouping of other types and is wrapped in `{` `}`.
   * `{:ok, true}`
-  * `{1, "two", :three, 4.0}
+  * `{1, "two", :three, 4.0}`
 
 8. Map - a map takes two types as a key value pair. The key must be either a string or atom. This means that a map can be created a couple different ways. It is wrapped in `%{` and `}`
   * `%{test: 1}` - most common
@@ -50,5 +50,5 @@ The types are as follows:
   * `%{:atom => 1}`
 
 9. Struct - a struct is a map that has defined parameters. They are typically defined in a module using `defstruct`. They give you the ability to know what keys to expect in a map.
-  * %User{first_name: "Billie", last_name: "Jean", gender: :female, my_lover: false}
-  * %Book{title: "Great Expectations", author: "Charles Dickens", pages: 544}
+  * `%User{first_name: "Billie", last_name: "Jean", gender: :female, my_lover: false}`
+  * `%Book{title: "Great Expectations", author: "Charles Dickens", pages: 544}`
