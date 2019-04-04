@@ -11,7 +11,8 @@ The types are as follows:
 
 1. string - a string is wrapped in quotes. They can be either one line or multiline.
   * `"hello"`
-  * ```
+  * 
+  ```
   """
   This is
   a multiline
