@@ -6,7 +6,7 @@ defmodule VariablesTest do
       number = nil
 
       # set number to the right value
-
+      number = 1
       assert number == 1
     end
 
@@ -14,7 +14,7 @@ defmodule VariablesTest do
       string = nil
 
       # set string to the right value
-
+      string = "a string"
       assert string == "a string"
     end
 
@@ -22,7 +22,7 @@ defmodule VariablesTest do
       map = nil
 
       # set map to the right value
-
+      map = %{test: "test"}
       assert map == %{test: "test"}
     end
 
@@ -32,7 +32,7 @@ defmodule VariablesTest do
       tuple = {:first, 2}
 
       # pull apart tuple to set both variables
-
+      {first, second} = tuple
       assert first == :first
       assert second == 2
     end
@@ -43,7 +43,7 @@ defmodule VariablesTest do
       map = %{item_a: "first", item_b: "second"}
 
       # pull apart map to set both variables
-
+      %{item_a: first, item_b: second} = map
       assert first == "first"
       assert second == "second"
     end
