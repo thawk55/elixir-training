@@ -40,7 +40,7 @@ defmodule VariablesTest do
     test "Pull apart map" do
       first = nil
       second = nil
-      tuple = %{item_a: "first", item_b: "second"}
+      map = %{item_a: "first", item_b: "second"}
 
       # pull apart map to set both variables
 
