@@ -3,8 +3,8 @@ defmodule FunctionsTest do
 
   describe "Test Functions" do
     test "Expect a number to return true" do
-      assert Functions.needs_a_guard(1)
-      refute Functions.needs_a_guard("string")
+      assert Functions.needs_a_guard(1) == "a number!"
+      assert Functions.needs_a_guard("string") == "Not a number!"
     end
 
     test "Expect 42 to be the answer" do
