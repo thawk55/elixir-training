@@ -11,6 +11,8 @@ defmodule BookClub.Club do
     # a Club has a name and a meeting_day
     # meeting_day should have a default
     # example: field(:field_name, :string)
+    field(:name, :string)
+    field(:meeting_day, :string, default: "Monday")
   end
 
   @fields [:name, :meeting_day]

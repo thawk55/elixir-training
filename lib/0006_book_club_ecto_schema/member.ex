@@ -10,6 +10,8 @@ defmodule BookClub.Member do
     # need to add fields and their types
     # a Member has a first_name, and a last_name
     # example: field(:field_name, :string)
+    field(:first_name, :string)
+    field(:last_name, :string)
   end
 
   @fields [:first_name, :last_name]

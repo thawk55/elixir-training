@@ -10,6 +10,10 @@ defmodule BookClub.Book do
     # need to add fields and their types
     # a Book has a title, author, pages, and genre
     # example: field(:field_name, :string)
+    field(:title, :string)
+    field(:author, :string)
+    field(:pages, :integer)
+    field(:genre, :string)
   end
 
   @fields [:title, :author, :pages, :genre]
