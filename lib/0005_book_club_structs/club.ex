@@ -1,8 +1,6 @@
-defmodule BookClub.Club do
+defmodule OldBookClub.Club do
   @moduledoc """
   Club Struct
-
-  You'll need to define the Club struct. Needs a name and a meeting_day
   """
-  # defstruct
+  defstruct name: "", meeting_day: "Monday"
 end

@@ -1,8 +1,6 @@
-defmodule BookClub.Book do
+defmodule OldBookClub.Book do
   @moduledoc """
   Book Struct
-
-  You'll need to define the Book struct. Needs a title, author, pages, and genre
   """
-  # defstruct
+  defstruct title: "", author: "", pages: 0, genre: ""
 end

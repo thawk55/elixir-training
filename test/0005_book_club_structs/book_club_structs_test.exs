@@ -1,7 +1,7 @@
 defmodule BookClubStructsTest do
   use ExUnit.Case
 
-  alias BookClub.{Book, Club, Member}
+  alias OldBookClub.{Book, Club, Member}
 
   describe "Check the Structs" do
     test "Check the Member struct" do

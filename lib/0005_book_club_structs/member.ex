@@ -1,8 +1,6 @@
-defmodule BookClub.Member do
+defmodule OldBookClub.Member do
   @moduledoc """
   Member Struct
-
-  You'll need to define the Member struct with first_name and last_name
   """
-  # defstruct
+  defstruct first_name: "", last_name: ""
 end
