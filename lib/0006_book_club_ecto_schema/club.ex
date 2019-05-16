@@ -9,6 +9,7 @@ defmodule BookClub.Club do
   schema "clubs" do
     # need to add fields and their types
     # a Club has a name and a meeting_day
+    # meeting_day should have a default
     # example: field(:field_name, :string)
   end
 
