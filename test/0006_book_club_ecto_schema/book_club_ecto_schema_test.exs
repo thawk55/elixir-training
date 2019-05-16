@@ -31,9 +31,9 @@ defmodule BookClubEctoSchemaTest do
     test "Check the Club Struct" do
       changeset = Club.create(%{})
       refute changeset.valid?
-      assert changeset.errors == [name: {"can't be blank", [validation: :required]}]
-
+      assert changeset.errors == [name: {"can't be blank", [validation: :required]}, meeting_day: {"can't be blank", [validation: :required]}]
       params = %{name: "Club", meeting_day: "Wednesday"}
+
       changeset = Club.create(params)
       assert length(changeset.errors) == 0
       assert changeset.changes == params
