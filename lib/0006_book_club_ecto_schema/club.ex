@@ -12,7 +12,7 @@ defmodule BookClub.Club do
     # meeting_day should have a default
     # example: field(:field_name, :string)
     field(:name, :string)
-    field(:meeting_day, :string, default: "Monday")
+    field(:meeting_day, :string)
   end
 
   @fields [:name, :meeting_day]
