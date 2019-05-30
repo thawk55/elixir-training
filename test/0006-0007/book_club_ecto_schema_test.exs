@@ -7,9 +7,9 @@ defmodule BookClubEctoSchemaTest do
     test "Check the Member struct" do
       changeset = Member.create(%{})
       refute changeset.valid?
-      assert changeset.errors == [first_name: {"can't be blank", [validation: :required]}, last_name: {"can't be blank", [validation: :required]}]
+      assert changeset.errors == [first_name: {"can't be blank", [validation: :required]}, last_name: {"can't be blank", [validation: :required]}, club_id: {"can't be blank", [validation: :required]}]
 
-      params = %{first_name: "Bob", last_name: "Schmidt"}
+      params = %{first_name: "Bob", last_name: "Schmidt", club_id: 1}
       changeset = Member.create(params)
       assert changeset.valid?
       assert length(changeset.errors) == 0
