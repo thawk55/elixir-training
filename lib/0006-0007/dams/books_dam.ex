@@ -3,6 +3,8 @@ defmodule BookClub.Dams.BooksDam do
     Data Access Module to access books schema.
   """
 
+  import Ecto.Query
+
   def all() do
     []
   end
@@ -19,7 +21,7 @@ defmodule BookClub.Dams.BooksDam do
     book
   end
 
-  def delete(id) do
-    id
+  def delete(%BookClub.Book{} = book) do
+    book
   end
 end
