@@ -1,4 +1,4 @@
-defmodule BookClub.Member do
+defmodule BookClub.ClubBook do
   @moduledoc """
   Book Struct
 
@@ -6,20 +6,15 @@ defmodule BookClub.Member do
   use Ecto.Schema
   import Ecto.Changeset
 
-  schema "members" do
-    # need to add fields and their types
-    # a Member has a first_name, and a last_name
-    # example: field(:field_name, :string)
-    field(:first_name, :string)
-    field(:last_name, :string)
-
+  schema "club_books" do
+    belongs_to(:book, BookClub.Book)
     belongs_to(:club, BookClub.Club)
   end
 
-  @fields [:first_name, :last_name, :club_id]
+  @fields [:book_id, :club_id]
 
   @doc """
-  Creates a new member.
+  Creates a new club_book.
   """
   def create(params) do
     %__MODULE__{}
@@ -28,7 +23,7 @@ defmodule BookClub.Member do
   end
 
   @doc """
-  Updates an existing member.
+  Updates an existing club_book.
   """
   def edit(struct, params) do
     struct

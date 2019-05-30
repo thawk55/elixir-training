@@ -14,6 +14,8 @@ defmodule BookClub.Book do
     field(:author, :string)
     field(:pages, :integer)
     field(:genre, :string)
+
+    has_many(:club_books, BookClub.ClubBook)
   end
 
   @fields [:title, :author, :pages, :genre]

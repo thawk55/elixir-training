@@ -13,6 +13,9 @@ defmodule BookClub.Club do
     # example: field(:field_name, :string)
     field(:name, :string)
     field(:meeting_day, :string)
+
+    has_many(:member, BookClub.Member)
+    has_many(:club_books, BookClub.ClubBook)
   end
 
   @fields [:name, :meeting_day]
