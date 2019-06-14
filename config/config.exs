@@ -7,10 +7,12 @@ config :elixir_training, ElixirTraining.Repo,
   username: "postgres",
   password: "",
   hostname: "localhost",
+  pool: Ecto.Adapters.SQL.Sandbox,
   ecto_repos: []
 
-  config :elixir_training,
-    ecto_repos: [ElixirTraining.Repo]
+config :elixir_training,
+  ecto_repos: [ElixirTraining.Repo]
+
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
 # file won't be loaded nor affect the parent project. For this reason,
