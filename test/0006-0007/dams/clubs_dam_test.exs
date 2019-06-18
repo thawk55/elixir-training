@@ -1,5 +1,5 @@
 defmodule ClubsDamTest do
-  use ExUnit.Case
+  use ElixirTraining.Case
 
   alias BookClub.Club
   alias BookClub.Dams.ClubsDam
@@ -22,14 +22,14 @@ defmodule ClubsDamTest do
     end
 
     test "create/1 new club" do
-      club = ClubsDam.create(%{name: "Best Book Club", meeting_day: "Tuesday"})
+      {:ok, club} = ClubsDam.create(%{name: "Best Book Club", meeting_day: "Tuesday"})
       refute is_nil(club.id)
     end
 
     test "update/2 a club" do
       {:ok, club1} = create_club()
-      updated_club = ClubsDam.update(club1, %{name: "New Name"})
-      assert updated_club.title == "New Name"
+      {:ok, updated_club} = ClubsDam.update(club1, %{name: "New Name"})
+      assert updated_club.name == "New Name"
       assert updated_club.id == club1.id
     end
 

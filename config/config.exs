@@ -3,7 +3,7 @@
 use Mix.Config
 
 config :elixir_training, ElixirTraining.Repo,
-  database: "elixir_training",
+  database: "elixir-training-test",
   username: "postgres",
   password: "",
   hostname: "localhost",

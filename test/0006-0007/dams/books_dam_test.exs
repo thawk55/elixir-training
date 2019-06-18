@@ -1,5 +1,5 @@
 defmodule BooksDamTest do
-  use ExUnit.Case
+  use ElixirTraining.Case
 
   alias BookClub.Book
   alias BookClub.Dams.BooksDam
@@ -22,13 +22,20 @@ defmodule BooksDamTest do
     end
 
     test "create/1 new book" do
-      book = BooksDam.create(%{title: "Great Expectations", author: "Charles Dickens", pages: 544, genre: "Bildungsroman"})
+      {:ok, book} =
+        BooksDam.create(%{
+          title: "Great Expectations",
+          author: "Charles Dickens",
+          pages: 544,
+          genre: "Bildungsroman"
+        })
+
       refute is_nil(book.id)
     end
 
     test "update/2 a book" do
       {:ok, book1} = create_book()
-      updated_book = BooksDam.update(book1, %{title: "New title"})
+      {:ok, updated_book} = BooksDam.update(book1, %{title: "New title"})
       assert updated_book.title == "New title"
       assert updated_book.id == book1.id
     end

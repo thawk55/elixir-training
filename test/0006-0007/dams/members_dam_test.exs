@@ -1,5 +1,5 @@
 defmodule MembersDamTest do
-  use ExUnit.Case
+  use ElixirTraining.Case
 
   alias BookClub.{Club, Member}
   alias BookClub.Dams.MembersDam
@@ -23,14 +23,17 @@ defmodule MembersDamTest do
 
     test "create/1 new member" do
       {:ok, %{club_id: club_id}} = create_member()
-      member = MembersDam.create(%{first_name: "Bob", last_name: "Builder", club_id: club_id})
+
+      {:ok, member} =
+        MembersDam.create(%{first_name: "Bob", last_name: "Builder", club_id: club_id})
+
       refute is_nil(member.id)
     end
 
     test "update/2 a member" do
       {:ok, member1} = create_member()
-      updated_member = MembersDam.update(member1, %{first_name: "New Name"})
-      assert updated_member.title == "New Name"
+      {:ok, updated_member} = MembersDam.update(member1, %{first_name: "New Name"})
+      assert updated_member.first_name == "New Name"
       assert updated_member.id == member1.id
     end
 
@@ -42,12 +45,14 @@ defmodule MembersDamTest do
   end
 
   def create_member() do
-    {:ok, club} = ElixirTraining.Repo.insert(
-      Club.create(%{
-        name: "Name#{Enum.random(1..100)}",
-        meeting_day: "Monday"
-      })
-    )
+    {:ok, club} =
+      ElixirTraining.Repo.insert(
+        Club.create(%{
+          name: "Name#{Enum.random(1..100)}",
+          meeting_day: "Monday"
+        })
+      )
+
     ElixirTraining.Repo.insert(
       Member.create(%{
         first_name: "First Name#{Enum.random(1..100)}",
