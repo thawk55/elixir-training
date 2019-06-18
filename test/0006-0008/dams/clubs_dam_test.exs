@@ -2,7 +2,7 @@ defmodule ClubsDamTest do
   use ElixirTraining.Case
 
   alias BookClub.Club
-  alias BookClub.Dams.ClubsDam
+  alias BookClub.Dams.{BooksDam, ClubBooksDam, ClubsDam, MembersDam}
 
   describe "Queries for Clubs" do
     test "can get all/0" do
@@ -47,5 +47,52 @@ defmodule ClubsDamTest do
         meeting_day: "Monday"
       })
     )
+  end
+
+  describe "join queries" do
+    setup do
+      {:ok, club} = ClubsDam.create(%{name: "Book Club", meeting_day: "Monday"})
+
+      {:ok, book1} =
+        BooksDam.create(%{title: "Book", author: "Some Guy", pages: 1, genre: "Mystery"})
+
+      {:ok, book2} =
+        BooksDam.create(%{title: "Book 2", author: "Some Other Guy", pages: 1, genre: "Mystery"})
+
+      {:ok, _} = ClubBooksDam.create(%{book_id: book1.id, club_id: club.id})
+      {:ok, _} = ClubBooksDam.create(%{book_id: book2.id, club_id: club.id})
+
+      {:ok, member1} =
+        MembersDam.create(%{club_id: club.id, first_name: "Bob", last_name: "Smith"})
+
+      {:ok, member2} =
+        MembersDam.create(%{club_id: club.id, first_name: "Joe", last_name: "Workman"})
+
+      {:ok, member3} =
+        MembersDam.create(%{club_id: club.id, first_name: "Ricky", last_name: "Doodah"})
+
+      {:ok,
+       %{
+         club: club,
+         book1: book1,
+         book2: book2,
+         member1: member1,
+         member2: member2,
+         member3: member3
+       }}
+    end
+
+    test "can get members of the club", %{
+      club: club,
+      member1: member1,
+      member2: member2,
+      member3: member3
+    } do
+      members = ClubsDam.get_members_of_club(club)
+      assert length(members) == 3
+      assert Enum.any?(members, &(&1.id == member1.id))
+      assert Enum.any?(members, &(&1.id == member2.id))
+      assert Enum.any?(members, &(&1.id == member3.id))
+    end
   end
 end

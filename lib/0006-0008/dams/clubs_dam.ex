@@ -30,4 +30,9 @@ defmodule BookClub.Dams.ClubsDam do
   def delete(%BookClub.Club{} = club) do
     Repo.delete(club)
   end
+
+  # Should return the members of the club
+  def get_members_of_club(club) do
+    []
+  end
 end

@@ -10,6 +10,8 @@ config :elixir_training, ElixirTraining.Repo,
   pool: Ecto.Adapters.SQL.Sandbox,
   ecto_repos: []
 
+config :logger, level: :info
+
 config :elixir_training,
   ecto_repos: [ElixirTraining.Repo]
 
