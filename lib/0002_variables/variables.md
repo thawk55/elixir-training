@@ -13,7 +13,7 @@ It can be used to assign variables as follows:
   *  `tuple = {true, 123456}` will set the variable `tuple` to be `{true, 123456}`
   *  `{is_true, number} = {true, 123456}` will set two variables `is_true` to be `true` and `number` to be `123456`
   *  `[first, second] = [1, 2]` will set `first` = 1 and `second` = 2
-  *  `%{hello: test} = %{hello: 5}` will set `test` = 5
+  *  `%{hello: test} = %{hello: 5, blah: 9}` will set `test` = 5 and `blah` will remain untouched.
 
   It is important to know that an error will be thrown if it cannot be matched. For example:
 
