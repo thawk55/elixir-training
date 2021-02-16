@@ -8,13 +8,7 @@ defmodule ElixirTraining.Application do
   def start(_type, _args) do
     children = [
       # Start the Ecto repository
-      ElixirTraining.Repo,
-      # Start the Telemetry supervisor
-      ElixirTraining.Telemetry,
-      # Start the PubSub system
-      {Phoenix.PubSub, name: ElixirTraining.PubSub},
-      # Start the Endpoint (http/https)
-      ElixirTraining.Endpoint
+      ElixirTraining.Repo
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

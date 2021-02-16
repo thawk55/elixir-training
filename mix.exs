@@ -16,6 +16,7 @@ defmodule ElixirTraining.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
+      mod: {ElixirTraining.Application, []},
       extra_applications: [:logger]
     ]
   end
