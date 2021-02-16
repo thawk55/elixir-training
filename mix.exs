@@ -8,6 +8,7 @@ defmodule ElixirTraining.MixProject do
       elixir: "~> 1.8",
       start_permanent: Mix.env() == :prod,
       elixirc_paths: ["lib", "test/support"],
+      aliases: aliases(),
       deps: deps()
     ]
   end
@@ -25,6 +26,15 @@ defmodule ElixirTraining.MixProject do
       {:ecto_sql, "~> 3.0"},
       {:mix_test_watch, "~> 0.8"},
       {:postgrex, ">= 0.0.0"}
+    ]
+  end
+
+  defp aliases do
+    [
+      setup: ["deps.get", "ecto.setup"],
+      "ecto.setup": ["ecto.create", "ecto.migrate"],
+      "ecto.reset": ["ecto.drop", "ecto.setup"],
+      test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"]
     ]
   end
 end
