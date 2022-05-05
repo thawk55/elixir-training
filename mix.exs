@@ -24,8 +24,15 @@ defmodule ElixirTraining.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:absinthe, "~> 1.4"},
+      {:absinthe_plug, "~> 1.4"},
       {:ecto_sql, "~> 3.0"},
       {:mix_test_watch, "~> 0.8"},
+      {:phoenix, "~> 1.5.4"},
+      {:phoenix_ecto, "~> 4.1"},
+      {:phoenix_live_dashboard, "~> 0.2"},
+      {:plug_cowboy, "~> 2.0"},
+      {:poison, "~> 2.1.0"},
       {:postgrex, ">= 0.0.0"}
     ]
   end

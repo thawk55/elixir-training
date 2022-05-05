@@ -5,6 +5,7 @@ defmodule BookClub.Dams.ClubsDam do
 
   import Ecto.Query
   alias BookClub.Club
+  alias BookClub.Member
   alias ElixirTraining.Repo
 
   def all() do
@@ -33,6 +34,10 @@ defmodule BookClub.Dams.ClubsDam do
 
   # Should return the members of the club
   def get_members_of_club(club) do
-    []
+    Repo.all(
+      from m in Member,
+      where: m.club_id == ^club.id,
+      preload: [:club]
+    )
   end
 end
